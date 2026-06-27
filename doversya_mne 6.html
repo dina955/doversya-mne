@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doversya Mne — Новая коллекция 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0d0d0d;
+      --deep:    #141414;
+      --surface: #1c1c1c;
+      --border:  #2a2a2a;
+      --gold:    #c9a96e;
+      --gold-lt: #e0c898;
+      --white:   #a8dce8;
+      --muted:   #5a8fa0;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Montserrat', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 72px;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav { display: flex; gap: 2.8rem; }
+
+    nav a {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.35s ease;
+    }
+    nav a:hover { color: var(--white); }
+    nav a:hover::after { width: 100%; }
+
+    .burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .burger span { display: block; width: 24px; height: 1px; background: var(--gold); transition: all 0.3s; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 5vw 10vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,13,13,0.2) 0%, rgba(13,13,13,0.75) 70%, var(--black) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-content { position: relative; max-width: 720px; }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+      color: var(--white);
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      max-width: 420px;
+      margin-bottom: 2.8rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.35s, color 0.35s, transform 0.2s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-2px);
+    }
+    .btn-solid {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-solid:hover {
+      background: var(--gold-lt);
+      color: var(--black);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 5vw; }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── COLLECTION ── */
+    #collection { background: var(--deep); }
+
+    .collection-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .collection-header h2 { margin-bottom: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(.22,.61,.36,1), border-color 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 0.5px var(--gold);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: filter 0.4s, transform 0.5s;
+    }
+    .card:hover .card-img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+    .card-img-wrap { overflow: hidden; }
+
+    .card-body {
+      padding: 1.2rem 1.3rem 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-price {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+    }
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -16px; left: -16px;
+      right: 16px; bottom: 16px;
+      border: 1px solid var(--gold);
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    .about-text { }
+    .about-text p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 1.4rem;
+      line-height: 1.85;
+    }
+    .about-text p strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── SUBSCRIBE ── */
+    #subscribe {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .subscribe-inner { max-width: 520px; margin: 0 auto; }
+
+    .subscribe-inner h2 { margin-bottom: 0.6rem; }
+    .subscribe-inner p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    input[type=text], input[type=email] {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      padding: 0.95rem 1.3rem;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    input::placeholder { color: var(--muted); }
+    input:focus { border-color: var(--gold); }
+
+    .success-msg {
+      display: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-top: 1.2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    footer p {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    /* ── DIVIDER ── */
+    .gold-line {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0.6;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      #about { grid-template-columns: 1fr; }
+      .about-img-wrap { max-width: 460px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-row .btn { width: 100%; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      nav { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: rgba(13,13,13,0.97); padding: 2rem 5vw; gap: 1.8rem; border-bottom: 1px solid var(--border); }
+      nav.open { display: flex; }
+      .burger { display: flex; }
+      .collection-header { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#hero" class="logo">Doversya Mne</a>
+  <nav id="nav">
+    <a href="#hero">Главная</a>
+    <a href="#collection">Коллекция</a>
+    <a href="#about">О нас</a>
+    <a href="#subscribe">Контакты</a>
+  </nav>
+  <div class="burger" id="burger" aria-label="Меню" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Doversya Mne — SS 2026</p>
+    <!-- golden wave brand mark -->
+    <svg viewBox="0 0 260 28" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:auto;margin-bottom:1.6rem;opacity:0.75;">
+      <path d="M10,14 C30,4 50,24 70,14 C90,4 110,24 130,14 C150,4 170,24 190,14 C210,4 230,24 250,14"
+        fill="none" stroke="#c9a96e" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M10,20 C30,12 50,28 70,20 C90,12 110,28 130,20 C150,12 170,28 190,20 C210,12 230,28 250,20"
+        fill="none" stroke="#c9a96e" stroke-width="0.5" stroke-linecap="round" opacity="0.4"/>
+      <circle cx="10" cy="14" r="1.5" fill="#c9a96e" opacity="0.7"/>
+      <circle cx="250" cy="14" r="1.5" fill="#c9a96e" opacity="0.7"/>
+    </svg>
+    <h1>Новая<br><em>коллекция</em><br>2026</h1>
+    <p class="hero-sub" style="color:#a8dce8;">Это — необычное для необычных.</p>
+    <a href="#collection" class="btn">Смотреть коллекцию</a>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section id="collection">
+  <div class="collection-header">
+    <div>
+      <p class="section-label">SS 2026</p>
+      <h2>Коллекция</h2>
+    </div>
+    <a href="#subscribe" class="btn">Все позиции</a>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img class="card-img"
+          src="https://i.postimg.cc/W193qnJ1/IMG-4009.jpg"
+          alt="Комплект: юбка и кофта" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <p class="card-name">Комплект: юбка и кофта</p>
+        <p class="card-price">7 800 ₽</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img class="card-img"
+          src="https://i.postimg.cc/nhVrL5rd/IMG-4245.jpg"
+          alt="Рубашка в полоску" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <p class="card-name">Рубашка в полоску</p>
+        <p class="card-price">4 000 ₽</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img class="card-img"
+          src="https://i.postimg.cc/vZ8TmjTX/IMG-4714.jpg"
+          alt="Рубашка в клетку" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <p class="card-name">Рубашка в клетку</p>
+        <p class="card-price">4 000 ₽</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img class="card-img"
+          src="https://i.postimg.cc/wTQ3gHq1/IMG-5860.jpg"
+          alt="Платье с цветочным принтом" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <p class="card-name">Платье с цветочным принтом</p>
+        <p class="card-price">5 500 ₽</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap" style="display:flex;flex-direction:column;justify-content:center;padding:2.5rem;background:var(--surface);border:1px solid var(--border);position:relative;min-height:420px;">
+    <!-- decorative corner lines -->
+    <svg viewBox="0 0 40 40" style="position:absolute;top:16px;left:16px;width:36px;opacity:0.45;" xmlns="http://www.w3.org/2000/svg"><path d="M0,36 L0,0 L36,0" fill="none" stroke="#c9a96e" stroke-width="1"/></svg>
+    <svg viewBox="0 0 40 40" style="position:absolute;top:16px;right:16px;width:36px;opacity:0.45;" xmlns="http://www.w3.org/2000/svg"><path d="M40,36 L40,0 L4,0" fill="none" stroke="#c9a96e" stroke-width="1"/></svg>
+    <svg viewBox="0 0 40 40" style="position:absolute;bottom:16px;left:16px;width:36px;opacity:0.45;" xmlns="http://www.w3.org/2000/svg"><path d="M0,4 L0,40 L36,40" fill="none" stroke="#c9a96e" stroke-width="1"/></svg>
+    <svg viewBox="0 0 40 40" style="position:absolute;bottom:16px;right:16px;width:36px;opacity:0.45;" xmlns="http://www.w3.org/2000/svg"><path d="M40,4 L40,40 L4,40" fill="none" stroke="#c9a96e" stroke-width="1"/></svg>
+    <p style="font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Наша история</p>
+    <div style="width:28px;height:1px;background:var(--gold);margin-bottom:1.6rem;opacity:0.6;"></div>
+    <p style="font-family:var(--serif);font-style:italic;font-size:1.08rem;font-weight:300;color:var(--white);line-height:1.85;letter-spacing:0.02em;">
+      Всё началось с одной строчки и одной идеи. Без планов, без выкроек — просто желание создавать вещи, которые хочется носить.
+    </p>
+    <br>
+    <p style="font-size:0.82rem;font-weight:300;color:var(--muted);line-height:1.85;letter-spacing:0.03em;">
+      Мы начинали с низов, с нуля, вкладывая в каждый шов много сил и труда. Сегодня <strong style="color:var(--white);font-weight:400;">Doversya Mne</strong> — это не просто магазин. Это моя мечта, которая стала реальностью. Каждая сшитая мною вещь — это маленькое произведение искусства, которое я с трепетом отдаю в ваши руки.
+    </p>
+  </div>
+
+  <div class="about-text">
+    <p class="section-label">О бренде</p>
+    <div class="gold-line"></div>
+    <h2>Доверие<br>к деталям</h2>
+    <div class="about-stats">
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Года на рынке</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Вдохновения и стиля</div>
+      </div>
+      <div>
+        <div class="stat-num">✦</div>
+        <div class="stat-label">Новые образы каждый сезон</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND VALUES -->
+<section id="subscribe" style="padding: 90px 5vw; background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align:center;">
+  <p style="font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Наши ценности</p>
+  <svg viewBox="0 0 200 16" xmlns="http://www.w3.org/2000/svg" style="width:140px;height:auto;margin:0 auto 3rem;display:block;opacity:0.5;">
+    <path d="M5,8 C25,2 45,14 65,8 C85,2 105,14 125,8 C145,2 165,14 185,8" fill="none" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>
+  </svg>
+  <div style="display:flex;justify-content:center;gap:5vw;flex-wrap:wrap;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.7rem;">
+      <span style="font-family:var(--serif);font-size:2rem;color:var(--gold);opacity:0.8;">✦</span>
+      <span style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);">Качество</span>
+    </div>
+    <div style="width:1px;background:var(--border);align-self:stretch;flex-shrink:0;"></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.7rem;">
+      <span style="font-family:var(--serif);font-size:2rem;color:var(--gold);opacity:0.8;">✦</span>
+      <span style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);">Изысканность</span>
+    </div>
+    <div style="width:1px;background:var(--border);align-self:stretch;flex-shrink:0;"></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.7rem;">
+      <span style="font-family:var(--serif);font-size:2rem;color:var(--gold);opacity:0.8;">✦</span>
+      <span style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);">Доверие</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Doversya Mne</span>
+  <a href="https://www.instagram.com/doversya.mne_?igsh=MWZzdjRjdXVrbHNudA==" target="_blank" rel="noopener" style="color:#a3c9a3;font-size:0.78rem;letter-spacing:0.1em;text-decoration:none;transition:opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">@doversya.mne_</a>
+  <p>© 2026 Doversya Mne. Все права защищены.</p>
+  <p>Made with intention.</p>
+</footer>
+
+<script>
+  // Burger menu
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  burger.addEventListener('click', () => nav.classList.toggle('open'));
+  burger.addEventListener('keydown', e => { if (e.key === 'Enter') nav.classList.toggle('open'); });
+
+  // Close nav on link click
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Smooth header opacity on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.style.borderBottomColor = window.scrollY > 60
+      ? 'rgba(201,169,110,0.25)' : 'var(--border)';
+  }, { passive: true });
+</script>
+</body>
+</html>
